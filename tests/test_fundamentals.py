@@ -2,5 +2,8 @@
 
 
 def test_import():
+    import wordify
 
-    from wordify
+
+def test_access():
+    from wordify import units
