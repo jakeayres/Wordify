@@ -47,13 +47,11 @@ def hundreds(i):
     :param i: Integer in the hundreds position
     :return: The word representation
     """
-    return units(i) + ' hundred and' 
+    return units(i) + ' hundred and'
 
 
-
-powers = [
-    'thousand',
-    'million',
-    'billion',
-    'trillion',
-]
+def thousands(x):
+    """
+    Return the words in the thousands position.
+    """
+    return hundreds(str(x)[0]) + tens(str(x)[1]) + units(str(x)[2])
