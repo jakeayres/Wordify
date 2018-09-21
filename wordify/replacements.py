@@ -1,7 +1,6 @@
 
 
 
-
 def make_replacements(word):
     """ 
     Applies the lists substring replacements

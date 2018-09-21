@@ -6,4 +6,4 @@ def test_import():
 
 
 def test_access():
-    from wordify import units
+    from wordify import Integer
