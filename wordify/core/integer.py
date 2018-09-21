@@ -1,82 +1,74 @@
 class Integer(object):
     """
-    A Triple is three consecutive digits of a number.
-    eg. 456   is composed of one triple:   456
-        23800 is composed of two triples:  23, 800
-    It is a useful primitive as large numbers are just concatenated
-    triples with the textual representation of a power-of-1000 
-    separating them.
-    eg.   123,045,008  ->             123 million  45 thousand and   8
-        4,010,200,167  ->   4 billion  10 million 200 thousand     167 
-        The 23, 450 and 8 under-go the same processing 
+    
     """
 
-    concatenator = 'and'
+    # concatenator = 'and'
 
-    units = [
-        'zero',
-        'one',
-        'two',
-        'three',
-        'four',
-        'five', 
-        'six',
-        'seven',
-        'eight',
-        'nine'
-        ]
+    # units = [
+    #     'zero',
+    #     'one',
+    #     'two',
+    #     'three',
+    #     'four',
+    #     'five', 
+    #     'six',
+    #     'seven',
+    #     'eight',
+    #     'nine'
+    #     ]
 
-    tens = [
-        '',
-        'ten',
-        'twenty',
-        'thirty',
-        'forty',
-        'fifty', 
-        'sixty',
-        'seventy',
-        'eighty',
-        'ninety'
-        ]
+    # tens = [
+    #     '',
+    #     'ten',
+    #     'twenty',
+    #     'thirty',
+    #     'forty',
+    #     'fifty', 
+    #     'sixty',
+    #     'seventy',
+    #     'eighty',
+    #     'ninety'
+    #     ]
 
-    hundred = 'hundred'
+    # hundred = 'hundred'
 
-    powers_of_1000 = [
-        None,
-        'thousand',
-        'million',
-        'billion',
-        'trillion',
-        'quadrillion',
-        'quintillion',
-        'sextillion',
-        'septillion',
-        'octillion',
-        'decillion',
-        'undecillion',
-        'duodecillion',
-        'tredecillion',
-        'quattuordecillion',
-        'quindecillion',
-    ]
+    # powers_of_1000 = [
+    #     None,
+    #     'thousand',
+    #     'million',
+    #     'billion',
+    #     'trillion',
+    #     'quadrillion',
+    #     'quintillion',
+    #     'sextillion',
+    #     'septillion',
+    #     'octillion',
+    #     'decillion',
+    #     'undecillion',
+    #     'duodecillion',
+    #     'tredecillion',
+    #     'quattuordecillion',
+    #     'quindecillion',
+    # ]
 
-    replacements = {
-        'ten zero':  'ten',
-        'ten one':   'eleven',
-        'ten two':   'twelve',
-        'ten three': 'thirteen',
-        'ten four':  'fourteen',
-        'ten five':  'fifteen',
-        'ten six':   'sixteen',
-        'ten seven': 'seventeen',
-        'ten eight': 'eighteen',
-        'ten nine':  'nineteen',
-    }
+    # replacements = {
+    #     'ten zero':  'ten',
+    #     'ten one':   'eleven',
+    #     'ten two':   'twelve',
+    #     'ten three': 'thirteen',
+    #     'ten four':  'fourteen',
+    #     'ten five':  'fifteen',
+    #     'ten six':   'sixteen',
+    #     'ten seven': 'seventeen',
+    #     'ten eight': 'eighteen',
+    #     'ten nine':  'nineteen',
+    # }
 
-    modifiers = [
-        lambda word: word.rstrip(' zero') if word.endswith('zero') and word!='zero' else word,
-        lambda word: word.rsplit(' and')[0] if word.endswith('and') else word 
-    ]
+    # modifiers = [
+    #     lambda word: word.rstrip(' zero') if word.endswith('zero') and word!='zero' else word,
+    #     lambda word: word.rsplit(' and')[0] if word.endswith('and') else word 
+    # ]
 
 
     @classmethod
@@ -203,5 +195,4 @@ class Integer(object):
             words[-1] = f'{cls.concatenator} {words[-1]}'
 
         word = ' '.join(words)
-        print(words)
         return word

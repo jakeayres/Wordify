@@ -1,4 +1,9 @@
-from wordify.primitives import Integer
+from wordify.core.integer import Integer
+from wordify.languages.en import EN
+
+
+Integer  = type('Integer', (EN, object), Integer.__dict__.copy())
+
 
 
 def test_clean_whitespace():

@@ -1,9 +1,7 @@
-class EN():
-
-    zero = 'zero'
+class EN(object):
 
     units = [
-        '',
+        'zero',
         'one',
         'two',
         'three',
@@ -31,6 +29,7 @@ class EN():
     hundred = 'hundred'
 
     powers_of_1000 = [
+        None,
         'thousand',
         'million',
         'billion',
@@ -62,3 +61,8 @@ class EN():
         'ten eight': 'eighteen',
         'ten nine':  'nineteen',
     }
+
+    modifiers = [
+        lambda word: word.rstrip(' zero') if word.endswith('zero') and word!='zero' else word,
+        lambda word: word.rsplit(' and')[0] if word.endswith('and') else word 
+    ]
